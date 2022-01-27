@@ -5,9 +5,10 @@ from nltk.corpus import wordnet
 #run through first letters and see if any create real words
 #attempt to suggest alternatives based on vowel structure?
 
-#NEXT: insert words not found within the wordnet into the mixedSyns list anyways
+#NEXT: work on increased word similarity net creation - does relatedwords have an api?
 
 #grab phrases for acronym
+print("Welcome to PODLU! Let's explore other options for your lacking acronyms.")
 fullString = input("Enter your phrases, delineated by spaces: ")
 wordArray = fullString.split()
 wnLemmas = set(wordnet.all_lemma_names())
@@ -74,4 +75,9 @@ for r in mixedSyns:
 if not acroList:
     print("Whoops, nothing nice found. Bye.")
 else:
-    print(acroList)
+    print("Woah, we got options!\nHow about...\n")
+    for r in acroList:
+        for c in r:
+            print(c)
+        print()
+dang = input("End program...")
