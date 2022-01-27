@@ -1,4 +1,3 @@
-import os
 import itertools
 from nltk.corpus import wordnet
 
@@ -52,8 +51,6 @@ for index, r in enumerate(synList):
         if not(h in lemmas):
             lemmas.append(h)
     trueSyn.append(lemmas)
-    #print(r[word].lemma_names())
-    #print(r[word].similar_tos())
     #trueSyn.append([h.name().split(".")[0] for h in r[word].similar_tos()])
 
 #run through trueSyn to discover possible acronym combinations
@@ -64,7 +61,6 @@ if acroLength <= 1:
     print("Not enough phrases for acronym. Program will close.")
     quit()
 mixedSyns = list(itertools.product(*trueSyn))
-#print(mixedSyns)
 for r in mixedSyns:
     testCase = ""
     for c in r:
